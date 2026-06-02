@@ -9,6 +9,7 @@ tools:
   - read_file
   - write_file
   - grep_search
+  - glob
   - web_fetch
   - run_shell_command
   - edit
