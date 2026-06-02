@@ -5,7 +5,9 @@ description: Use when you have received or need to read a research report from t
 
 # Consuming Research Reports
 
-Research reports are written to `.qwen/research/` (project working directory) by the `web-researcher` sub-agent (type: `web-researcher`). They have structured headers designed for incremental reading. **Never read the full report unless absolutely necessary.**
+Research reports are written to `.qwen/research/` (project working directory, NOT `~/.qwen/` memory directory) by the `web-researcher` sub-agent (type: `web-researcher`). They have structured headers designed for incremental reading. **Never read the full report unless absolutely necessary.**
+
+> **路径规则**：所有 `.qwen/research/` 路径必须相对于项目工作目录（即你的 `run_shell_command` 默认工作目录），不要写到 `~/.qwen/` 记忆/配置目录下。
 
 ## Consumption Order
 
