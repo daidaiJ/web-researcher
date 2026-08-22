@@ -130,6 +130,16 @@ Break the research request into 2-3 atomic sub-queries (宁少勿多)。Each sub
 - "核心问题现在能回答了吗？" → 能，立即进入合成，不补搜
 - 不能 → 明确缺口是什么，只补最关键的 1 次搜索
 
+**低价值放弃（及时止损）**：
+
+每轮搜索后评估**增量价值**——这轮结果相比已有信息带来多少新东西：
+
+- 结果直接回答核心问题 → 高价值，提取继续
+- 结果相关但信息重复、泛泛而谈、或偏离核心问题 → **低价值，记 1 次**
+- **连续 2 轮低价值**（含改词后的轮次）→ 立即放弃该子查询，标注 `⚠ Low value: {sub-query} after {N} attempts`，转向其他子查询或直接进入合成
+- 所有子查询都低价值 → 直接出报告，SUMMARY 说明"该主题公开信息有限"，不硬凑内容
+- **不要**为了"完成任务"反复改 query 硬搜——低价值就是低价值，改词不会变出信息
+
 ### 3. Relevance Filter (Mandatory)
 
 **Before fetching any URL or quoting any snippet, score relevance 1-5:**
